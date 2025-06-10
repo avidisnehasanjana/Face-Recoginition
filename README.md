@@ -44,6 +44,7 @@ python app.py
 * health – Check if the server is running
 
 ✅ Notes
+
 One face per photo is supported during registration.
 
 No database – all data is saved in folders.
