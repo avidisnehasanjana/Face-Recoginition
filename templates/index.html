@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Face Recognition App</title>
+  <style>
+    * { box-sizing: border-box; }
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f1f5f9;
+      color: #333;
+    }
+    header {
+      background-color: #1d4ed8;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      font-size: 1.5rem;
+    }
+    .layout {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      padding: 20px;
+      min-height: calc(100vh - 80px);
+    }
+    .card {
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      flex: 1;
+      min-width: 300px;
+      max-width: 100%;
+    }
+    .left { flex: 2; }
+    .right { flex: 1; }
+    .card h2 { margin: 0 0 15px; color: #1e3a8a; }
+    img#live-feed {
+      width: 100%;
+      max-height: 480px;
+      object-fit: contain;
+      border-radius: 8px;
+      border: 2px solid #1d4ed8;
+    }
+    canvas#snapshot {
+      display: none;
+    }
+    input[type="text"], input[type="file"] {
+      width: 100%;
+      padding: 10px;
+      margin: 8px 0;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 14px;
+    }
+    button {
+      width: 100%;
+      padding: 10px;
+      background-color: #1d4ed8;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 14px;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    button:hover { background-color: #1e40af; }
+    #status {
+      margin-top: 10px;
+      font-weight: 500;
+      color: #16a34a;
+    }
+    #status.error { color: #dc2626; }
+    @media (max-width: 768px) {
+      .layout { flex-direction: column; }
+      .card { flex: 1; max-width: 100%; }
+    }
+  </style>
+</head>
+<body>
+  <header>🎥 Real-Time Face Recognition</header>
+  <div class="layout">
+    <div class="card left">
+      <h2>👁️ Live Detection</h2>
+      <img id="live-feed" src="{{ url_for('video_feed') }}" alt="Webcam Feed">
+      <canvas id="snapshot"></canvas>
+    </div>
+    <div class="card right">
+      <h2>📝 Register a Face</h2>
+      <h3>📸 From Webcam</h3>
+      <input type="text" id="name" placeholder="Enter your name">
+      <button onclick="registerFromLive()">Register From Webcam</button>
+      <h3>📁 From Upload</h3>
+      <input type="text" id="uploadName" placeholder="Enter your name">
+      <input type="file" id="upload" accept="image/*">
+      <button onclick="registerFromUpload()">Register From Upload</button>
+      <div id="status"></div>
+    </div>
+  </div>
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
