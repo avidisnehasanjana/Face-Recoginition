@@ -8,7 +8,9 @@ This is a simple web application that can:
 * Let new users register by uploading a photo.
 
 * Save user data (images and face encodings) in folders using their names.
+  
 🧠 What It Does
+
 Live Camera Feed:
 
 * Uses your webcam to detect faces.
