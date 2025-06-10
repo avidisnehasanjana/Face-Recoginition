@@ -11,28 +11,27 @@ This is a simple web application that can:
 🧠 What It Does
 Live Camera Feed:
 
-Uses your webcam to detect faces.
+* Uses your webcam to detect faces.
 
-Displays names if the person is already registered.
+* Displays names if the person is already registered.
 
 Register with Image:
 
-You can upload a photo with your name.
+* You can upload a photo with your name.
 
-The app saves the photo and face data in a folder.
+* The app saves the photo and face data in a folder.
 
 Face Matching:
 
-Compares faces from the camera or uploaded image with saved data.
+* Compares faces from the camera or uploaded image with saved data.
 
 
 🚀 How to Run
+
 Install the requirements:
-
 pip install flask flask-cors opencv-python face_recognition numpy
+
 Run the app:
-
-
 python app.py
 
 
