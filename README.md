@@ -1,14 +1,13 @@
 # Face-Recoginition
-This is a simple web application that can:
+This is a simple web application that can: 
 
-Show a live webcam feed with real-time face recognition.
+* Show a live webcam feed with real-time face recognition.
 
-Recognize people who have already registered.
+* Recognize people who have already registered.
 
-Let new users register by uploading a photo.
+* Let new users register by uploading a photo.
 
-Save user data (images and face encodings) in folders using their names.
-
+* Save user data (images and face encodings) in folders using their names.
 🧠 What It Does
 Live Camera Feed:
 
@@ -35,9 +34,7 @@ Run the app:
 
 
 python app.py
-Open in browser:
 
-Go to http://localhost:5000
 
 📡 Endpoints
 / – Main web page
