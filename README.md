@@ -36,13 +36,12 @@ python app.py
 
 
 📡 Endpoints
-/ – Main web page
 
-/video_feed – Shows live webcam with face recognition
+* video_feed – Shows live webcam with face recognition
 
-/register – Register a user with name and photo (base64 image)
+* register – Register a user with name and photo (base64 image)
 
-/health – Check if the server is running
+* health – Check if the server is running
 
 ✅ Notes
 One face per photo is supported during registration.
